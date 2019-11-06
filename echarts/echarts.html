@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>echarts测试</title>
+		<link rel="stylesheet" type="text/css" href="css/echarts.css" />
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/shuju.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="hotJobTop">
+			<ul id="tab_nav">
+				<li class="on" data-tabnav="data-lookNum" data-value="0" data-max_ssid="183"><a href="javascript:;">曝光量</a></li>
+				<li data-tabnav="data-gosNum" data-value="1" data-max_ssid="184" class=""><a href="javascript:;">访问增长</a></li>
+				<li data-tabnav="data-shareNum" data-value="2" data-max_ssid="185" class=""><a href="javascript:;">分享数</a></li>
+			</ul>
+			<div id="myChart"></div>
+			<ul id="jobBox">
+				<li class="on" data-looknum="0" data-gosnum="0" data-sharenum="0"><a href="javascript:;">家居建材五金</a></li>
+				<li class="on" data-looknum="1" data-gosnum="1" data-sharenum="1"><a href="javascript:;">家饰家纺</a></li>
+				<li data-looknum="2" data-gosnum="2" data-sharenum="2"><a href="javascript:;">建工化学农用品</a></li>
+				<li data-looknum="3" data-gosnum="3" data-sharenum="3"><a href="javascript:;">服装鞋帽箱包</a></li>
+				<li class="on" data-looknum="4" data-gosnum="4" data-sharenum="4"><a href="javascript:;">健身医药保健</a></li>
+				<li data-looknum="5" data-gosnum="5" data-sharenum="5" class="on"><a href="javascript:;">交通运输物流</a></li>
+				<li data-looknum="6" data-gosnum="6" data-sharenum="6"><a href="javascript:;">生活服务</a></li>
+				<li data-looknum="7" data-gosnum="7" data-sharenum="7"><a href="javascript:;">电器数码办公</a></li>
+				<li data-looknum="8" data-gosnum="8" data-sharenum="8"><a href="javascript:;">食品酒类生鲜</a></li>
+				<li data-looknum="9" data-gosnum="9" data-sharenum="9"><a href="javascript:;">日用百货</a></li>
+				<li data-looknum="10" data-gosnum="10" data-sharenum="10"><a href="javascript:;">母婴文教乐器</a></li>
+				<li data-looknum="11" data-gosnum="11" data-sharenum="11"><a href="javascript:;">机电能源仪器仪表</a></li>
+				<li data-looknum="12" data-gosnum="12" data-sharenum="12"><a href="javascript:;">运动户外钟表</a></li>
+				<li data-looknum="13" data-gosnum="13" data-sharenum="13"><a href="javascript:;">美妆护理珠宝</a></li>
+				<li data-looknum="14" data-gosnum="14" data-sharenum="14"><a href="javascript:;">电气电子制造</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//topKindArr存放得是选中显示得名字得数组
+			var topKindArr = [];
+			// seriesArr存放得是被选中得第几个
+			var xDataArr = [];
+			// xDataArr存放得是x轴刻度线（月份）
+			var seriesArr = [];
+			// 焦点样式
+			var kindObj = {
+				name: null,
+				type: 'line',
+				smooth: true,
+				symbol: 'circle',
+				itemStyle: {
+					normal: {
+						areaStyle: {
+							type: 'default'
+						}
+					}
+				},
+			}
+			
+			var kind1,kind2,kind3,kind4;
+			//$.extend() 函数用于将一个或多个对象的内容合并到目标对象。
+			// 复制对象(上面得样式)
+			kind1 = $.extend(true,{},kindObj);
+			kind2 = $.extend(true,{},kindObj);
+			kind3 = $.extend(true,{},kindObj);
+			kind4 = $.extend(true,{},kindObj);
+			
+			// 设置四种线得样式(颜色)
+			kind1.itemStyle.normal.color = '#1f9fe2';
+			kind1.itemStyle.normal.lineStyle = {
+				color: '#1f9fe2'
+			}
+			// 折线下面得区域样式
+			kind1.itemStyle.normal.areaStyle.color = {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{ // 渐变颜色
+					offset: 0,
+					color: 'rgba(31,159,226,0.5)' // 0% 处的颜色
+				}, {
+					offset: 1,
+					color: 'rgba(31,159,226,0)' // 100% 处的颜色
+				}],
+				global: false
+			};
+			kind2.itemStyle.normal.color = '#26cac0';
+			kind2.itemStyle.normal.lineStyle = {
+				color: '#26cac0'
+			}
+			kind2.itemStyle.normal.areaStyle.color = {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{ // 渐变颜色
+					offset: 0,
+					color: 'rgba(38,202,192,0.5)' // 0% 处的颜色
+				}, {
+					offset: 1,
+					color: 'rgba(38,202,192,0)' // 100% 处的颜色
+				}],
+				global: false
+			};
+			kind3.itemStyle.normal.color = '#b368f2';
+			kind3.itemStyle.normal.lineStyle = {
+				color: '#b368f2'
+			}
+			kind3.itemStyle.normal.areaStyle.color = {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{
+					offset: 0,
+					color: 'rgba(179,104,242,0.5)'
+				},{
+					offset: 1,
+					color: 'rgba(179,104,242,0)'
+				}],
+				global: false
+			};
+			kind4.itemStyle.normal.color = '#6e6ef0';
+			kind4.itemStyle.normal.lineStyle = {
+				color: '#6e6ef0'
+			}
+			kind4.itemStyle.normal.areaStyle.color = {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{
+					offset: 0,
+					color: 'rgba(110,110,240,0.5)'
+				},{
+					offset: 1,
+					color: 'rgba(110,110,240,0)'
+				}],
+				global: false
+			};
+			
+			var myChart = echarts.init(document.getElementById('myChart'));
+			function updateMyChartFn(dataName, k) {
+				var hd = err[k]
+				// 选中得行业名称
+				kind1.name = $('#jobBox>li.on').eq(0).find('a') ? $('#jobBox>li.on').eq(0).find('a').html() : null;
+				kind2.name = $('#jobBox>li.on').eq(1).find('a') ? $('#jobBox>li.on').eq(1).find('a').html() : null;
+				kind3.name = $('#jobBox>li.on').eq(2).find('a') ? $('#jobBox>li.on').eq(2).find('a').html() : null;
+				kind4.name = $('#jobBox>li.on').eq(3).find('a') ? $('#jobBox>li.on').eq(3).find('a').html() : null;
+				
+				//选中行业得下标
+				var k1 = $('#jobBox>li.on').eq(0).attr(dataName) ? $('#jobBox>li.on').eq(0).attr(dataName) : '';
+				var k2 = $('#jobBox>li.on').eq(1).attr(dataName) ? $('#jobBox>li.on').eq(1).attr(dataName) : '';
+				var k3 = $('#jobBox>li.on').eq(2).attr(dataName) ? $('#jobBox>li.on').eq(2).attr(dataName) : '';
+				var k4 = $('#jobBox>li.on').eq(3).attr(dataName) ? $('#jobBox>li.on').eq(3).attr(dataName) : '';
+				
+				//x坐标轴刻度线
+				var myDate = new Date()
+				var month = myDate.getMonth() + 1;
+				kind1.data = k1 ? hd[k1].slice(month - 2, month + 5) : [];
+				kind2.data = k2 ? hd[k2].slice(month - 2, month + 5) : [];
+				kind3.data = k3 ? hd[k3].slice(month - 2, month + 5) : [];
+				kind4.data = k4 ? hd[k4].slice(month - 2, month + 5) : [];
+				topKindArr = [kind1.name,kind2.name,kind3.name,kind4.name];
+				seriesArr = [kind1,kind2,kind3,kind4];
+				xDataArr = xData.slice(month -2, month + 5);
+				option = {
+					tooltip: {
+						trigger: 'axis',
+					},
+					legend: {
+						icon: 'circle',
+						data: topKindArr,
+						left: 'center',
+						textStyle: {
+							fontSize: 12,
+						},
+					},
+					
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [{
+						type: 'category',
+						boundaryGap: false,
+						data: xDataArr,
+						axisLabel: {
+							show: true,
+						},
+						textStyle: {
+							fontSize: 12,
+						},
+					}],
+					yAxis: [{
+						type: 'value',
+						axisLabel: {
+							show: true,
+							textStyle: {
+								fontSize: '8'
+							}
+						},
+					}],
+					series: seriesArr
+					
+				};
+				myChart.setOption(option);
+				
+			}
+			updateMyChartFn('data-lookNum', 0)
+			// 折线中得nav切换
+			$('#tab_nav>li').click(function(){
+				var max_ssid = $(this).attr('data-max_ssid');
+				$.post("http://m.10pinping.com/member/tongji.php?action=sj_tj", {
+					max_ssid: max_ssid
+				}, function(data) {})
+				if ($(this).hasClass('on')) {
+					return;
+				} else {
+					$(this).addClass('on').siblings('li').removeClass('on')
+					updateMyChartFn($(this).attr('data-tabNav'), $(this).attr('data-value'));
+				}
+			})
+			
+			// 折线图中得行业种类切换
+			$('#jobBox>li').click(function(){
+				var tabStr = $('#tab_nav>li.on').attr('data-tabNav');
+				var er = $('#tab_nav>li.on').attr('data-value');
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on')
+				}else {
+					if ($('#jobBox>li.on').length >= 4) {
+						alert('最多只能选择4种行业展示');
+						return
+					} else {
+						$(this).addClass('on')
+					}
+				}
+				$.post("http://m.10pinping.com/member/tongji.php?action=sj_tj", {
+					max_ssid: 186
+				}, function(data) {
+					console.log(data)
+				})
+				updateMyChartFn(tabStr, er)
+			})
+			
+			// 自动切换随机显示3种行业
+			var tabTime = setInterval('tabLi()',5000)
+			function tabLi() {
+				$('#jobBox>li').removeClass('on')
+				var arr = []
+				var add = 0
+				while (add < 3) {
+					let a = Math.floor(Math.random() * 14)
+					if (arr.indexOf(a) == -1) {
+						arr.push(a)
+						add++
+					}
+				}
+				let jobBox1 = $('#jobBox').children('li')[arr[0]]
+				let jobBox2 = $('#jobBox').children('li')[arr[1]]
+				let jobBox3 = $('#jobBox').children('li')[arr[2]]
+				$(jobBox1).addClass('on')
+				$(jobBox2).addClass('on')
+				$(jobBox3).addClass('on')
+				tabStrChange()
+			}
+			
+			$('#myChart').mouseenter(function(){
+				clearInterval(tabTime)
+			})
+			$('#myChart').mouseleave(function(){
+				tabTime = setInterval('tabLi()', 5000)
+			})
+			function tabStrChange(){
+				var tabStr = $('#tab_nav>li.on').attr('data-tabNav')
+				var er = $('#tab_nav>li.on').attr('data-value')
+				updateMyChartFn(tabStr, er)
+			}
+		</script>
+	</body>
+</html>
