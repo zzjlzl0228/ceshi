@@ -283,9 +283,17 @@
 			})
 			function tabStrChange(){
 				var tabStr = $('#tab_nav>li.on').attr('data-tabNav')
+				// 选中得nav栏得下标
 				var er = $('#tab_nav>li.on').attr('data-value')
 				updateMyChartFn(tabStr, er)
 			}
+		</script>
+		<script type="text/javascript">
+			document.body.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			}, {
+				passive: false
+			});
 		</script>
 	</body>
 </html>
