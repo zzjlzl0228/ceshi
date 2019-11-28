@@ -1,0 +1,213 @@
+.content {
+	max-width: 7.5rem;
+	height: 2.97rem;
+	margin: auto;
+	background: url(../vote-img/ppxq_jpdt_img.png) no-repeat;
+	background-size: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.36rem 0 0.3rem;
+}
+.topinfo {
+	width: 6.9rem;
+	height: 3.36rem;
+	background: #fff;
+	box-shadow: 0rem 0.03rem 0.16rem rgba(178,178,178,0.18);
+	border-radius: 0.16rem;
+	padding: 0.4rem 0.4rem 0.58rem 0.4rem;
+	display:flex;
+	flex-direction: column;
+}
+.logoGroup {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+.logoImg {
+	width: 2.36rem;
+	height: 1.26rem;
+	border: 0.06rem solid rgba(207,4,5,1);
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.1rem;
+}
+.logoImg img {
+	width: 0.93rem;
+	height: 0.65rem;
+}
+.brandName {
+	min-width: 3.3rem;
+	font-size: 0.36rem;
+	font-weight: bold;
+	color: rgba(51,51,51,1);
+	padding-left: 0.4rem;
+	display: flex;
+	align-items: center;
+}
+.code {
+	width: 0.5rem;
+	height: 0.5rem;
+	display: flex;
+	justify-content: flex-end;
+}
+.basicInfo {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 0.5rem;
+}
+.basicInfo li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.basicInfo li p:first-child {
+	font-size: 0.36rem;
+	font-weight: bold;
+	color: rgba(192,49,40,1);
+}
+.basicInfo li p:last-child {
+	font-size: 0.26rem;
+	font-weight: 400;
+	color: rgba(51,51,51,1);
+}
+.line {
+	width: 0.02rem;
+	height: 0.7rem;
+	background: rgba(229,229,229,1);
+}
+.brandDetail {
+	width: 6.9rem;
+	height: 5.07rem;
+	background: #fff;
+	box-shadow: 0rem 0.03rem 0.16rem rgba(178,178,178,0.2);
+	border-radius: 0.16rem;
+	margin-top: 0.3rem;
+	padding: 0.3rem 0.3rem 0.6rem 0.3rem;
+}
+.brandDetail .title {
+	width: 100%;
+	font-size: 0.34rem;
+	font-weight: bold;
+	color: rgba(51,51,51,1);
+	padding-bottom: 0.3rem;
+	border-bottom: 0.01rem solid rgba(229,229,229,1);
+}
+.bottomDetail {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.bottomDetail li {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 0.4rem;
+}
+.bottomDetail li img {
+	width: 0.26rem;
+	height: 0.26rem;
+}
+.bottomDetail li .bdLeft {
+	font-size: 0.26rem;
+	font-weight: 400;
+	color: rgba(102,102,102,1);
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+}
+.bottomDetail li .bdRight {
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(51,51,51,1);
+	word-wrap: break-word;
+}
+.small-program {
+	width: 1.19rem;
+	height: 1.2rem;
+	position: fixed;
+	right: 0;
+	bottom: 4rem;
+}
+/* 点击小程序按钮出现的弹窗 */
+.model-smallProgram {
+	width: 100%;
+	height: 100%;
+	padding: 0.3rem;
+	max-width: 7.5rem;
+	margin: auto;
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+.model-wrap {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.model-box {
+	width: 6rem;
+	height: 6.24rem;
+	margin: auto;
+	background: #fff;
+	border-radius: 0.2rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.model-smallProgram .model-box .title {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 0.38rem;
+	font-weight: bold;
+}
+.model-smallProgram .model-box .title img {
+	width: 0.97rem;
+	height: 0.12rem;
+}
+.model-smallProgram .model-box .title p {
+	margin: 0.3rem;
+}
+.prompt-info {
+	width: 5.15rem;
+	height: 2.93rem;
+	margin-bottom: 0.7rem;
+	display: flex;
+	justify-content: center;
+}
+.prompt-info img {
+	width: 3.26rem;
+	height: 3.26rem;
+}
+.btn-wrap {
+	width: 5.08rem;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	background: #D3141C;
+	font-size: 0.28rem;
+	border-radius: 0.35rem;
+	text-align: center;
+	color: #fff;
+}
+.close {
+	position: absolute;
+	bottom: 0.7rem;
+}
+.close img {
+	width: 0.7rem;
+	height: 0.7rem;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>品牌认证</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/brandrz.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="head_help">
+			<a href="index.html" onclick="backPath()">
+				<i class="head_back"></i>
+				<!--返回图标-->
+			</a>
+			<p class="title_header">证书认证</p>
+		</div>
+		<div class="container">
+			<div class="content">
+				<!-- 标题 -->
+				<img src="img/pprz_wawz_img.png" class="title">
+				<div class="top-title">
+					<img src="img/ppxq_hyzb_img.png">
+					<span>面膜</span>
+					<img src="img/ppxq_hyyb_img.png">
+				</div>
+				<div class="center-content">
+					<div class="title1">查询结果</div>
+					<ul class="cxjgCon">
+						<li>
+							<span>证书编号:</span>
+							<span class="needEllipsis">201954412553212</span>
+						</li>
+						<li>
+							<span>行业名称:</span>
+							<span class="needEllipsis">中国面膜组件行业</span>
+						</li>
+						<li>
+							<span>品牌名称:</span>
+							<span class="needEllipsis">雅诗兰黛</span>
+						</li>
+						<li>
+							<span>企业名称:</span>
+							<span class="needEllipsis">河北石家庄市***公司</span>
+						</li>
+						<li>
+							<span>企业地址:</span>
+							<span class="needEllipsis">河北石家庄市***街道</span>
+						</li>
+						<li>
+							<span>获得荣誉:</span>
+							<span>中企膜组件行业十大品牌</span>
+						</li>
+						<li>
+							<span>认证来源:</span>
+							<span>中企十大品牌数据库</span>
+						</li>
+					</ul>
+					<img src="img/zqpp_yzym_img.png" class="img">
+				</div>
+				<div class="top-title" style="padding-top: 0.2rem;">
+					<img src="img/ppxq_hyzb_img.png">
+					<span>认证副本</span>
+					<img src="img/ppxq_hyyb_img.png">
+				</div>
+
+				<!-- 下面得认证副本内容 -->
+				<div class="box">
+					<div class="middleView swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide inside">
+								<img src="img/pprz-tuli.png">
+							</div>
+							<div class="swiper-slide inside">
+								<img src="img/pprz-tuli.png">
+							</div>
+							<div class="swiper-slide inside">
+								<img src="img/pprz-tuli.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var swiperR = new Swiper('.middleView', {
+				watchSlidesProgress: true,
+				slidesPerView: 'auto',
+				// 设置为居中
+				centeredSlides: true,
+				looped: false,
+				loopedSlide: 3,
+				// 自动初始化swiper
+				observer: true,
+				observeParents: true,
+				// window改变尺寸时swiper会重新初始化
+				resizeReInit: true,
+				// 图片加载完成后重新初始化swiper
+				updateOnImageReady: true,
+				on: {
+					progress: function(preogress) {
+						for (var i = 0; i < this.slides.length; i++) {
+							var slide = this.slides.eq(i);
+							var slideProgress = this.slides[i].progress;
+							modify = 1;
+							translate = slideProgress * modify * 5.72 + 'rem';
+							scale = 1 - Math.abs(slideProgress) / 8;
+							// 层级  Math.round() 函数返回一个数字四舍五入后最接近的整数。
+							zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+							slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+							slide.css('zIndex', zIndex)
+							slide.css('opacity', 1).addClass('shadow').css('background', 'transparent').children('img').css('opacity',
+								1).nextAll().css('opacity', 1)
+							if (Math.abs(Math.round(slideProgress)) > 1) {
+								slide.css('opacity', 0)
+							} else if (Math.abs(Math.round(slideProgress)) == 1) {
+								slide.removeClass('shadow').css('background',
+										'linear-gradient(180deg,rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 100%)')
+									.children('img').css('opacity', 0).nextAll().css('opacity', 0)
+							}
+						}
+					},
+					setTransition: function(transition) {
+						for (var i = 0; i < this.slides.length; i++) {
+							var slide = this.slides.eq(i);
+							slide.transition(transition);
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

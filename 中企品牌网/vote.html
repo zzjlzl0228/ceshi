@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>投票</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/vote.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header" style="background: transparent;">
+				<a href="index.html">
+					<img src="vote-img/home_per_icon.png" class="header-left">
+				</a>
+				<div class="input">
+					<input type="text" name="searching" id="searching" placeholder="快速找到你喜爱的品牌" />
+				</div>
+				<a href="baike.html">
+					<img src="vote-img/bkzs_pre_icon.png" class="header-left" style="padding-right: 0.2rem;padding-left: 0;">
+				</a>
+			</div>
+			<!-- 搜索得下拉列表 -->
+			<ul class="searchHistoryList"></ul>
+			<!-- 投票已结束 -->
+			<div class="content" style="display: none;">
+				<div class="bannerBox">
+					<div class="title">十大品牌评选活动</div>
+					<div class="hyname">门牌石行业</div>
+					<button class="join">参加活动</button>
+				</div>
+				<div class="rollingNotification">
+					<img src="vote-img/tp_txgg_icon.png">
+					<div class="rollingContainer">
+						<marquee>2019年度中国门牌石十大品牌评选投票活动火热报名中...</marquee>
+					</div>
+					<div class="activitiesDetail">
+						<p>活动</p>
+						<p>详情</p>
+					</div>
+				</div>
+				<div class="list">
+					<a href="brandDetail.html" class="item">
+						<div class="left">
+							<img src="">
+						</div>
+						<div class="center">
+							<div class="needEllipsis name"></div>
+						</div>
+						<div class="right">
+							<div class="text">活动已结束~</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!-- 投票进行时 -->
+			<div class="content" style="display: block;">
+				<div class="bannerBox voting-banner">
+					<div class="hyname hangye">烫发机行业</div>
+					<div class="activitiesBtn">
+						<div class="leftBtn activeBtn">
+							参加活动
+							<img src="vote-img/cjhd_btn_icon.png">
+						</div>
+						<div class="leftBtn">
+							荣誉
+							<img src="vote-img/cjhd_btn_icon.png">
+						</div>
+					</div>
+				</div>
+				<div class="rollingNotification">
+					<img src="vote-img/tp_txgg_icon.png">
+					<div class="rollingContainer">
+						<marquee>郑重提示：品牌网不会授权任何单位，谨防诈骗。</marquee>
+					</div>
+					<div class="activitiesDetail" style="color: #A40001;">
+						<p>活动</p>
+						<p>详情</p>
+					</div>
+				</div>
+				<!-- 倒计时 -->
+				<div class="countdown">
+					<div class="left-text">
+						<p>投票</p>
+						<p>倒计时</p>
+					</div>
+					<div class="right-date">
+						<div class="time minutes"></div>
+						<p>分</p>
+						<div class="time seconds"></div>
+						<p>秒</p>
+					</div>
+				</div>
+				<!-- 投票列表 -->
+				<div class="voteList">
+					<a href="#" class="section topOne">
+						<img src="vote-img/tp_top1zs_img.png" class="top-one">
+						<img src="vote-img/tp_jhg_img.png" class="top1">
+						<div class="leftLo">
+							<img src="">
+						</div>
+						<div class="center-name">
+							<p></p>
+							<div class="cenBot">
+								<img src="vote-img/tp_dps_icon.png">
+								<p></p>
+							</div>
+						</div>
+						<div class="right-vote">
+							投票
+						</div>
+					</a>
+					<a href="#" class="section topTwo">
+						<img src="vote-img/tp_top2zs_img.png" class="top-one">
+						<img src="vote-img/tp_yhg_img.png" class="top1">
+						<div class="leftLo">
+							<img src="">
+						</div>
+						<div class="center-name">
+							<p></p>
+							<div class="cenBot">
+								<img src="vote-img/tp_dps_icon.png">
+								<p></p>
+							</div>
+						</div>
+						<div class="right-vote">
+							投票
+						</div>
+					</a>
+					<a href="#" class="section topThree">
+						<img src="vote-img/tp_top3zs_img.png" class="top-one">
+						<img src="vote-img/tp_thg_img.png" class="top1">
+						<div class="leftLo">
+							<img src="">
+						</div>
+						<div class="center-name">
+							<p></p>
+							<div class="cenBot">
+								<img src="vote-img/tp_dps_icon.png">
+								<p></p>
+							</div>
+						</div>
+						<div class="right-vote">
+							投票
+						</div>
+					</a>
+				</div>
+			</div>
+
+
+			<!-- 右侧弹框微信 -->
+			<div class="contactUnique">
+				<div class="contactContent">
+					<a href="#" class="common wechat" style="display: none;">
+						<img src="vote-img/mwx_btn_icon.png">
+					</a>
+					<a href="#" class="common phone" style="display: none;">
+						<img src="vote-img/mkf_btn_icon.png">
+					</a>
+					<a href="#" class="common joinhd" style="display: none;">
+						<img src="vote-img/mcjhd_btn_icon.png">
+					</a>
+					<a href="#" class="common share" style="display: none;">
+						<img src="vote-img/mhbfx_btn_icon.png">
+					</a>
+					<a href="#" class="common openAndClose">
+						<img src="vote-img/mwx_btn_icon.png">
+					</a>
+				</div>
+			</div>
+			<!-- 回到顶部 -->
+			<div class="goTopContent" style="display: none;">
+				<div class="goTop">
+					<img src="vote-img/xfan_fhdb_img.png">
+				</div>
+			</div>
+			<!-- 右侧二维码 -->
+			<div class="right-Qrcode">
+				<p>扫一扫 在微信打开</p>
+				<img src="vote-img/qr_code.png">
+			</div>
+		</div>
+		
+		<!-- 微信客服弹框 -->
+		<div class="dialogUnique" style="display: none;">
+			<div class="dialogUniqueContent">
+				<div class="wechatDialog">
+					<img src="vote-img/hyewm.jpg" class="wxDialog1s">
+				</div>
+				<div class="shareDialog">
+					<img src="vote-img/share.jpg"  >
+				</div>
+				<div class="close">
+					<img src="vote-img/tpyz_gb_btn_icon.png" >
+				</div>
+			</div>
+		</div>
+		<!-- 客服电话弹窗 -->
+		<div class="phoneUnique" style="display: none;">
+			<div class="mark">
+				<div class="title">提示</div>
+				<div class="tips">确认拨打客服电话400-159-0958吗?</div>
+				<div class="buttonGroup">
+					<div class="btn closeSelf" style="border-right: 0.01rem solid rgba(206,206,206,1);">取消</div>
+					<a href="#" class="btn">确定</a>
+				</div>
+			</div>
+		</div>
+		<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 0) {
+					$('.header').css('background', 'rgb(168,1,8)');
+				} else {
+					$('.header').css('background', 'transparent');
+				}
+			})
+			// 置顶
+			backTop('.goTopContent');
+			
+			// 点击参加活动跳转
+			$('.join,.leftBtn,.joinhd').click(function(){
+				$(window).attr('location','joinActivity.html');
+			})
+			
+			
+			
+			// 右侧弹框的收起与打开
+			$('.openAndClose').click(function() {
+				var img = $('.openAndClose img').attr('src').slice(9, 12)
+				if (img.indexOf('msq') == -1) {
+					$('.wechat,.phone,.joinhd,.share').css('display', 'flex')
+					$('.contactUnique').css('height', '4.2rem');
+					$('.openAndClose img').attr('src', 'vote-img/msq_btn_icon.png')
+				} else {
+					$('.wechat,.phone,.joinhd,.share').css('display', 'none')
+					$('.contactUnique').css('height', '1rem');
+					$('.openAndClose img').attr('src', 'vote-img/mwx_btn_icon.png')
+				}
+
+			})
+
+			// 微信弹框在手机端隐藏
+			$(window).ready(function() {
+				var w = $(document).width()
+				if (w > 750) {
+					$('.right-Qrcode').show()
+				} else {
+					$('.right-Qrcode').hide()
+				}
+			})
+
+			$.getJSON('vote.json', function(data) {
+				var $jsontip = $('.list');
+				var strHtml = ""; //存储数据的变量
+				$.each(data, function(infoIndex, info) {
+					var $cell = $('.list .item:first').clone()
+					if (infoIndex == 0) {
+						$jsontip.empty()
+					}
+					$cell.find('.left img').attr('src', info.url)
+					$cell.find('.name').text(info.title)
+					$jsontip.append($cell)
+				})
+			})
+
+			// 实现搜索功能	
+			$('#searching').bind('input propertychange', function(e) {
+				var txt = $('#searching').val();
+				if (txt == '') {
+					$('.searchHistoryList').html('')
+					$('.searchHistoryList').hide()
+				} else {
+					$('.searchHistoryList').show()
+					var html = '';
+					var arr = [];
+					$.ajax({
+						url: 'vote.json',
+						type: 'get',
+						dataType: 'json',
+						async: false,
+						cache: false,
+						success: function(result) {
+							var length = result.length
+							for (var i = 0; i < length; i++) {
+								var title = result[i].title;
+								if (title.indexOf(txt) != -1) {
+									if (arr.indexOf(title) == -1) {
+										arr.push(title);
+									}
+								}
+							}
+							return arr;
+						},
+						error: function() {
+							$('.searchHistoryList').css('display', 'none')
+						}
+					})
+					$.each(arr, function(i, v) {
+						html += "<li>" +
+							"<div class='textGroup'>" +
+							"<img src='common/img/search.png'>" +
+							"<div class='needEllipsis text'>" + v +
+							"</div>" +
+							"</div>" +
+							"<img src='common/img/arrow.png'>" +
+							"</li>"
+					})
+					$('.searchHistoryList').html(html);
+				}
+
+
+				// 点击当前显示的下拉列表,快速定位到相应位置
+				$('.searchHistoryList li').click(function() {
+					var text = $(this).find('.text').text();
+					$('.searchHistoryList').hide()
+					$.ajax({
+						url: 'vote.json',
+						type: 'get',
+						dataType: 'json',
+						cache: false,
+						async: false,
+						data: text,
+						success: function(data) {
+							$.each(data, function(i, v) {
+								var t = v.title;
+								var list = $('.list').children();
+								// 在json文件中找到与点击获取到的title一致的,则滑动到当前位置,并给其添加边框
+								if (t.indexOf(text) !== -1) {
+									var tp = 328 + 200 * i;
+									list[i].style.border = '0.06rem solid rgba(205,27,34,1)';
+									// 快速定位到当前距离
+									$("html,body").animate({
+										scrollTop: tp
+									}, 100);
+									setTimeout(function() {
+										list[i].style.border = 'none'
+									}, 5000);
+								}
+
+							})
+
+						},
+						error: function() {}
+					})
+
+				})
+			})
+		</script>
+		<!-- 投票倒计时 -->
+		<script type="text/javascript">
+			$('.leftBtn').click(function() {
+				$('.leftBtn').removeClass('activeBtn')
+				$(this).addClass('activeBtn')
+			})
+			// 投票倒计时
+			timeDown('time', '2019-11-26 18:40:00')
+
+			function timeDown(id, endDateStr) {
+				// 结束得时间
+				var endDate = new Date(endDateStr);
+				// 当前时间
+				var nowDate = new Date();
+				// 时间差 -- 结果未毫秒数
+				var timeCha = endDate - nowDate;
+				if (timeCha > 0) {
+					var totalMinutes = parseInt(timeCha / 1000 / 60);
+					var seconds = parseInt(timeCha / 1000 % 60);
+					// 不足为补0
+					if (seconds < 10) {
+						seconds = "0" + seconds;
+					}
+					if (totalMinutes < 10) {
+						totalMinutes = "0" + totalMinutes;
+					}
+					setTimeout(function() {
+						timeDown(id, endDateStr)
+					})
+				} else {
+					// console.log('已截止')
+					totalMinutes = '00';
+					seconds = '00';
+					// 要清除定时器
+					clearTimeout
+				}
+				// 将换算好得时间填充到相应位置
+				$('.minutes').text(totalMinutes);
+				$('.seconds').text(seconds)
+
+			}
+		</script>
+
+		<!-- 投票进行时 -->
+		<script type="text/javascript">
+			// 发送请求并渲染数据
+			$.ajax({
+				url: "vote-brand.json",
+				type: "get",
+				dataType: "json",
+				async: false,
+				cache: false,
+				success: function(result) {
+					$jsontip = $('.voteList')
+					var length = result.length;
+					for (var i = 0; i < length; i++) {
+						var id = parseInt(result[i].id)
+						if (id === 1) {
+							$('.leftLo img').attr('src', result[i].logo);
+							$('.center-name p:first-child').text(result[i].title);
+							$('.cenBot p').text(result[i].num);
+						} else if (id === 2) {
+							$('.topTwo .leftLo img').attr('src', result[i].logo);
+							$('.topTwo .center-name p:first-child').text(result[i].title);
+							$('.topTwo .cenBot p').text(result[i].num);
+						} else if (id === 3) {
+							$('.topThree .leftLo img').attr('src', result[i].logo);
+							$('.topThree .center-name p:first-child').text(result[i].title);
+							$('.topThree .cenBot p').text(result[i].num);
+						} else if (id > 3 && id <= 10) {
+							var html = ''
+							html += '<a href="#" class="item">' +
+								'<div class="topNum">' +
+								'<img src="vote-img/tp_mc_icon(1).png" class="bk">' +
+								'<span>' + result[i].id + '</span>' +
+								'</div>' +
+								'<div class="left-logo">' +
+								'<img src="' + result[i].logo + '">' +
+								'</div>' +
+								'<div class="center-name">' +
+								'<p>' + result[i].title + '</p>' +
+								'<div class="cenBot">' +
+								'<img src="vote-img/tp_dps_icon.png">' +
+								'<p>' + result[i].num + '</p>'+
+							'</div>' +
+							'</div>' +
+							'<div class="right-vote">投票</div>' +
+							'</a>'
+							$jsontip.append(html)
+						} else {
+							var strHtml = ''
+							strHtml += ' <a href="#" class="item" style="background-color: #ececec;">' +
+								'<div class="topNum">' +
+								'<img src="vote-img/tp_mc_icon.png" class="bk">' +
+								'<span>' + result[i].id + '</span>' +
+								'</div>' +
+								'<div class="left-logo" style="border: 0.03rem solid #7e7e7e;">' +
+								'<img src="' + result[i].logo + '">' +
+								'</div>' +
+								'<div class="center-name">' +
+								'<p>' + result[i].title + '</p>' +
+								'<div class="cenBot">' +
+								'<img src="vote-img/tp_dps_icon.png">' +
+								'<p>' + result[i].num + '</p>' +
+								'</div>' +
+								'</div>' +
+								'<div class="right-vote">投票</div>' +
+								'</a>';
+							$jsontip.append(strHtml)
+						}
+					}
+				},
+				error:function () {
+					
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			// 点击微信客服显示弹框
+			$('.wechat').click(function(){
+				$('.wechatDialog').css('display','flex');
+				$('.shareDialog').css('display','none')
+				$('.dialogUnique').css('display','flex');
+				jzgd()
+			})
+			$('.close').click(function(){
+				$('.dialogUnique').css('display','none');
+				yxhd()
+			})
+			$('.share').click(function(){
+				$('.shareDialog').css('display','flex')
+				$('.wechatDialog').css('display','none');
+				$('.dialogUnique').css('display','flex');
+				jzgd()
+			})
+			function jzgd() {
+				document.body.style.overflow = "hidden";
+			}
+			
+			function yxhd() {
+				document.body.style.overflow = "auto";
+			}
+			// 点击客服电话显示弹框
+			$('.phone').click(function(){
+				$('.phoneUnique').css('display','flex');
+				jzgd()
+			})
+			$('.closeSelf').click(function(){
+				$('.phoneUnique').css('display','none');
+				yxhd()
+			})
+		</script>
+	</body>
+</html>

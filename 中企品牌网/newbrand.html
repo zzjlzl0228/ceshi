@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>品牌视界</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/newbrand.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header" style="background: #fff;">
+				<div class="group">
+					<a href="index.html">
+						<img src="common/img/ppsj_fhsy_btn_icon.png">
+					</a>
+					<form class="input" method="post">
+						<input type="text" placeholder="请输入您搜索的名称" class="searching" />
+						<div class="searchImg">
+							<img src="common/img/search.png">
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- 搜索框的下拉 列表 -->
+			<ul class="seachHistoryList" style="display: none;">
+				<a href="#">
+					<li>
+						<div class="textGroup">
+							<img src="common/img/search.png">
+							<div class="text needEllipsis">阿波罗</div>
+						</div>
+						<img src="common/img/arrow.png">
+					</li>
+				</a>
+			</ul>
+			<!-- 内容部分 -->
+			<div class="content">
+				<div class="banner">
+					<img src="img/banner.png">
+				</div>
+				<div class="listGroup">
+					<a href="#" class="item">
+						<div class="left">
+							<img src="img/01-06-47-4017-iq5shj-1900001.jpg" alt="" srcset="">
+						</div>
+						<div class="right">
+							<div class="title needEllipsis">
+								石牛 </div>
+							<div class="description ellipsis">
+								<span>
+									石牛食品始创于1990年，专注于休闲食品二十余年，是西南地区规模较大、品种齐全的糖 </span>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="pageContainer">
+					<div class="pageContent">
+						<div class="prev button border1px">
+							<a href="#">上一页</a>
+						</div>
+						<div class="next button">
+							<a href="#">下一页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 广告轮播图 -->
+			<div class="container" style="height: 2.2rem; margin-top: 0.4rem;">
+				<div class="swiper-bottom">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="img/09-57-11-f2yol5-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-39-hbf86x-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-55-e397m9-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-57-11-f2yol5-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-39-hbf86x-2200004.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 置顶按钮 -->
+		<div class="contant">
+			<img src="img/tpy_fx_icon.png">
+		</div>
+		<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				fenye('newbrand.json', '.listGroup', $('.listGroup a:first'));
+			})
+
+			// 当页面滑动时,顶部搜索框背景色变为红色,否则变为白色
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 0) {
+					$('.header').css('background', 'rgba(168,1,8,1)')
+				} else {
+					$('.header').css('background', 'white')
+				}
+			})
+
+			$(function() {
+				var searchInit = function() {
+					var init = {
+						runOnce: function() {
+							$('#input').submit(function(e) {
+								e.preventDefault()
+								e.stopPropagation()
+							})
+							var timer;
+							$('.searching').keypress(function() {
+								// 若按下enter键,在233ms去搜索当前输入的文本
+								if (e.which == 13) {
+									clearTimeout(timer);
+									timer = setTimeout(function() {
+										searchGo($('.searching').val())
+									}, 233);
+								}
+							})
+							$('.searchImg').click(function() {
+								// 阻止事件冒泡
+								e.stopPropagation()
+								clearTimeout(timer)
+								timer = setTimeout(function() {
+									searchGo($('.searching').val())
+								}, 233);
+							})
+							$('.searching').focus(function() {
+								$('.header').css('background', 'rgba(168,1,8,1)');
+								$('seachHistoryList').css('display', 'flex');
+							})
+							var searchTimer;
+							$('.searching').keyUp(function() {
+								clearTimeout(searchTimer)
+								searchTimer = setTimeout(function() {
+									$('.seachHistoryList').html('')
+									$('.header').css('background', 'rgba(168,1,8,1)');
+									$('.seachHistoryList').css('display', 'flex');
+									var title = $('.searching').val();
+									if (title) {
+										$.ajax({
+											url: 'http://m.10pinpaiwang.com/brand/newbrand.php?action=ajaxtitlelist',
+											type: 'post',
+											dataType: 'json',
+											data: {
+												title: title
+											},
+											cache: false,
+											success: function(data) {
+												console.log(data)
+												if (data) {
+													var html = ''
+													$.each(data, function(index, v) {
+														html += "<a href='newbrand.php?action=brandshow&id=" + v.itemid + "'><li>" +
+															"        <div class='textGroup'>" +
+															"          <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/search.png\" alt=\"\" srcset=\"\">" +
+															"          <div class='needEllipsis text'>" + v.title + "</div>" +
+															"        </div>" +
+															"        <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/arrow.png\" alt=\"\" srcset=\"\" >" +
+															"      </li></a>"
+														$('.seachHistoryList').html(html);
+													})
+												}
+											},
+											error: function() {}
+										})
+									}
+								}, 133)
+							})
+
+							function none() {
+								if ($(this).scrollTop() > 0) {
+									$('.header').css('background', 'rgba(168,1,8,1)')
+								} else {
+									$('.header').css('background', 'white')
+								}
+								$('.seachHistoryList').css('display', 'none')
+							}
+							$('.content').click(function() {
+								none()
+							})
+						},
+						getSearchHistory: function() {
+							if (localStorage.getItem('seachHistory')) return JSON.parse(localStorage.getItem('seachHistory'));
+							return []
+						},
+						setSearchHistory: function() {
+							if (!$('.searching').val()) return
+							var arr = init.getSearchHistory() || [];
+							// 将用户输入得搜索文本向数组得开头添加一个或多个元素,并返回新数组得长度
+							arr.unshift($('.searching').val());
+							localStorage.setItem('seachHistory', Json.stringify(arr));
+							init.searchListShow()
+						},
+						searchListShow: function() {
+							var getLi = function(value) {
+								return "<li>" +
+									"        <div class='textGroup'>" +
+									"          <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/search.png\" alt=\"\" srcset=\"\">" +
+									"          <div class='needEllipsis text'>" + value + "</div>" +
+									"        </div>" +
+									"        <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/arrow.png\" alt=\"\" srcset=\"\" >" +
+									"      </li>"
+							}
+							var html = '';
+							var lists = init.getSearchHistory();
+							for(var i =0; i< lists.length; i++){
+								(function(i) {
+									html += getLi(lists[i])
+								})(i)
+							}
+							$('.seachHistoryList').html(html);
+							init.setSearchHistoryLiEvent()
+						},
+						searchHistoryShowAndHide: function() {},
+						setSearchHistoryLiEvent: function() {
+							$('.seachHistoryList li').on('click', function() {
+								var text = $(this).text().trim()
+								searchGo(text)
+							})
+						}
+					}
+
+					function searchGo(text) {
+						if (!text) {
+							return
+							$('form').submit()
+						}
+					}
+				}
+				// $(".searching").change(function() {
+				// 	var searchText = $(this).val(); //获取输入的搜索内容
+				// 	var $searchLi = ""; //预备对象，用于存储匹配出的li
+
+				// 	if (searchText != "") {
+
+				// 		//获取所有匹配的li
+				// 		$searchLi = $(".seachHistoryList").find('a:contains(' + searchText + ')').parent();
+				// 		//将内容清空
+				// 		$(".seachHistoryList").html("");
+				// 	}
+
+				// 	//将获取的元素追加到列表中
+				// 	$(".seachHistoryList").html($searchLi).clone();
+				// 	var title = $('.searching').val();
+				// 	//判断搜索内容是否有效，若无效，输出not find
+				// 	if ($searchLi.length <= 0) {
+				// 		$(".seachHistoryList").html("<li>not find</li>")
+				// 	} else {
+				// 		$('.seachHistoryList').css('display','flex')
+				// 		html += "<a href='newbrand.php?action=brandshow&id=" + v.itemid + "'><li>" +
+				// 			"        <div class='textGroup'>" +
+				// 			"          <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/search.png\" alt=\"\" srcset=\"\">" +
+				// 			"          <div class='needEllipsis text'>" + v.title + "</div>" +
+				// 			"        </div>" +
+				// 			"        <img src=\"http://mimg.10pinpaiwang.com/skin/v1/brand/images/arrow.png\" alt=\"\" srcset=\"\" >" +
+				// 			"      </li></a>"
+				// 			$('.seachHistoryList').html(html);
+				// 	}
+				// })
+
+				// $(".searchImg").click(function() {
+				// 	$("searchText").change();
+				// })
+				// $('.searching').focus(function(e) {
+				// 	$('.header').css('background', 'rgba(168,1,8,1)')
+				// 	$('.searchHistoryList').css('display', 'flex')
+				// })
+
+
+
+
+
+			})
+		</script>
+	</body>
+</html>

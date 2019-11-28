@@ -1,0 +1,57 @@
+.wrap {
+	width: 6.9rem;
+	margin: auto;
+	/* height: 8rem; */
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 0.1rem;
+	box-shadow: 0rem 0rem 0.1rem rgba(132,132,132,0.27);
+	margin-top: 0.2rem;
+}
+.topTab {
+	width: 100%;
+	height: 1.4rem;
+	display: flex;
+	align-items: center;
+}
+.topTab .nav {
+	flex: 1;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	font-size: 0.32rem;
+	text-align: center;
+}
+.active {
+	color: #D3141C;
+}
+.redLine {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+.redLine .line {
+	width: 0.8rem;
+	height: 0.06rem;
+	background: #D3141C;
+	margin-top: -0.06rem;
+}
+.redLine .hide {
+	opacity: 0;
+}
+.grayline {
+	width: 6rem;
+	margin: auto;
+	height: 0.02rem;
+	background: rgba(238,238,238,1);
+}
+.con {
+	width: 5.97rem;
+	min-height: 8.4rem;
+	line-height: 0.48rem;
+	font-size: 0.26rem;
+	font-weight: 400;
+	color: rgba(51,51,51,1);
+	margin: 0.6rem auto 0.96rem;
+}

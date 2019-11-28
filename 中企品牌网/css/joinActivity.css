@@ -1,0 +1,410 @@
+.logoImg {
+	width: 7.5rem;
+	height: 3.2rem;
+	background: url(../vote-img/bmy_banner_img.png) no-repeat;
+	background-size: 100%;
+}
+
+.logoImg .bannerBtn {
+	padding-top: 1.96rem;
+	padding-left: 0.86rem;
+	font-size: 0.3rem;
+	color: #fff;
+	font-weight: 400;
+}
+
+.formContainer {
+	width: 7.5rem;
+	height: 100%;
+	margin-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+
+.ofWeb {
+	width: 7.5rem;
+	height: 1.02rem;
+	background: #fff;
+	padding: 0 0.3rem;
+}
+
+.ofWeb li {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0.3rem 0;
+}
+
+.ofWeb li .label {
+	width: 2.01rem;
+	font-size: 0.28rem;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	color: #666;
+}
+
+.ofWeb li .label span {
+	position: relative;
+}
+
+.ofWeb li .label span::after {
+	content: "*";
+	height: 0.42rem;
+	position: absolute;
+	top: 0.03rem;
+	right: -0.3rem;
+	font-size: 0.3rem;
+	font-weight: 400;
+	color: rgba(211, 20, 28, 1);
+}
+
+.ofWeb li input {
+	width: 2.8rem;
+	height: 0.42rem;
+	font-size: 0.3rem;
+	font-weight: 400;
+	color: rgba(189, 189, 189, 1);
+}
+
+/* 上传证件 */
+.upDoc {
+	margin-top: 0.3rem;
+	width: 7.5rem;
+	height: 5.25rem;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.32rem 0.3rem 0 0.3rem;
+}
+
+.upDoc .title, .idVer .title {
+	display: flex;
+	align-items: center;
+	height: 0.28rem;
+	font-size: 0.32rem;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+	padding: 0.01rem;
+	padding-left: 0.28rem;
+	position: relative;
+	margin-bottom: 0.42rem;
+}
+
+.upDoc .title::before,.idVer .title::before {
+	width: 0.08rem;
+	height: 0.28rem;
+	content: '';
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 0.04rem;
+	background: rgba(207, 20, 27, 1);
+}
+
+.upDoc .title .remarks {
+	padding-left: 0.28rem;
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(189, 189, 189, 1);
+	position: relative;
+}
+
+.upDoc .needFileGroup {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	flex-wrap: wrap;
+}
+
+.upDoc .needFileGroup .needFile {
+	width: 3.32rem;
+	height: 1.76rem;
+	margin-bottom: 0.2rem;
+	background: rgba(251, 251, 251, 1);
+	border: 0.01rem dashed rgba(153, 153, 153, 1);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.upDoc .needFile .mark {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.26rem;
+	background: #FBFBFB;
+	color: #fff;
+	position: absolute;
+	z-index: 3;
+}
+
+.upDoc .needFile .mark img {
+	width: 2.1rem;
+	height: 2.1rem;
+}
+
+.upDoc .needFile .uploadFile {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	/* align-items: center; */
+	position: absolute;
+	font-size: 0.26rem;
+	background: #FBFBFB;
+	color: #fff;
+}
+
+.upDoc .needFile .uploadFile img {
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.15rem;
+	margin-right: 0.2rem;
+}
+
+.needFile .uploadFile button {
+	margin-top: 0.2rem;
+	width: 1.3rem;
+	height: 0.4rem;
+	border: 0.01rem solid rgba(211, 20, 28, 1);
+	border-radius: 0.2rem;
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(211, 20, 28, 1);
+	background: white;
+}
+.deleteCurrentImage {
+	width: 0.36rem;
+	height: 0.36rem;
+	position: absolute;
+	top: 0.06rem;
+	right: 0.06rem;
+	z-index: 5;
+}
+.needFile label {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.needFile .showImage {
+	width: 100%;
+	z-index: 3;
+	display: none;
+}
+.needFile .slotClass {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(189,189,189,1);
+}
+.needFile .slotClass img {
+	width: 0.44rem;
+	height: 0.4rem;
+	margin-bottom: 0.2rem;
+}
+.needFile .slotClass .label {
+	display: flex;
+	align-items: center;
+	font-size: 0.28rem;
+	font-weight: 400;
+	color: rgba(189,189,189,1);
+}
+.needFile .slotClass .label span {
+	position: relative;
+}
+.needFile .slotClass .label span::after {
+	content: '*';
+	height: 0.42rem;
+	font-size: 0.3rem;
+	font-weight: 400;
+	color: rgba(211,20,28,1);
+	position: absolute;
+	right: -0.3rem;
+	top: 0.05rem;
+}
+.needFile .fileClass {
+	display: none;
+	cursor: pointer;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+/* 身份验证 */
+.idVer {
+	margin-top: 0.3rem;
+	width: 7.5rem;
+	height: auto;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.32rem 0.3rem 0 0.3rem;
+}
+.idVer li {
+	display: flex;
+	align-items: center;
+	border-bottom: 0.01rem solid rgba(241,241,241,1);
+	padding: 0.3rem 0;
+	flex-wrap: wrap;
+}
+.error {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 0.06rem;
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(211,20,28,1);
+	line-height: 0.33rem;
+}
+.error img {
+	width: 0.28rem;
+	height: 0.28rem;
+}
+.code {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-left: 0.3rem;
+}
+.code img {
+	width: 1.68rem;
+	height: 0.66rem;
+	margin-bottom: 0.16rem;
+	background: #fff;
+	border: 0.01rem solid rgba(219,219,219,1);
+}
+.getCode {
+	flex: 1;
+	height: 0.33rem;
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: rgba(115,158,252,1);
+	text-align: right;
+	padding-right: 0.06rem;
+}
+.submit {
+	padding: 0.65rem 0.3rem 0.6rem 0.3rem;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.submit .kefu {
+	width: 2.1rem;
+	height: 0.82rem;
+	background: rgba(226,200,123,1);
+	border-radius: 0.41rem;
+	font-size: 0.32rem;
+	font-weight: 400;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.submit .buttonSubmit {
+	width: 4.15rem;
+	height: 0.82rem;
+	background: rgba(211,20,28,1);
+	border-radius: 0.41rem;
+	font-size: 0.32rem;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+}
+
+/* 客服弹窗 */
+.cusPo {
+	width: 100%;
+	padding: 0.3rem;
+	max-width: 7.5rem;
+	margin: auto;
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+.cusPo .cusPoContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.model-box {
+	width: 6rem;
+	height: 6.24rem;
+	margin: auto;
+	background: #fff;
+	border-radius: 0.2rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 0.5rem;
+}
+.pic {
+	width: 1.3rem;
+	height: 1.3rem;
+	margin-bottom: 0.5rem;
+}
+.model-box p {
+	font-size: 0.3rem;
+	font-weight: bold;
+	color: rgba(51,51,51,1);
+	
+}
+.model-box .info {
+	font-size: 0.28rem;
+	font-weight: 500;
+	color: rgba(153,153,153,1);
+	text-align: center;
+}
+.model-box .info:last-child {
+	margin-bottom: 0.82rem;
+}
+.model-box .contact {
+	width: 2.59rem;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.model-box .contact img {
+	width: 1rem;
+	height: 1rem;
+}
+.close {
+	position: absolute;
+	bottom: 0.6rem;
+}
+.close img {
+	width: 0.7rem;
+	height: 0.7rem;
+}
+.bcVo {
+	position: fixed;
+	right: 0;
+	bottom: 0.6rem;
+}
+.bcVo img {
+	width: 1.34rem;
+	height: 1.34rem;
+}

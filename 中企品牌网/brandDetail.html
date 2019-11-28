@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>品牌详情</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/brandDetail.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="topinfo">
+					<div class="logoGroup">
+						<div class="logoImg">
+							<img src="vote-img/13-43-59-8393-gmvezp-1.jpg">
+						</div>
+						<div class="brandName">美华</div>
+						<div class="code">
+							<img src="vote-img/ppxq_ewm_icon.png">
+						</div>
+					</div>
+					<ul class="basicInfo">
+						<li>
+							<p>1</p>
+							<p>品牌排名</p>
+						</li>
+						<div class="line"></div>
+						<li>
+							<p>-</p>
+							<p>品牌影响力</p>
+						</li>
+						<div class="line"></div>
+						<li>
+							<p>-</p>
+							<p>当前票数</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="brandDetail">
+					<div class="title">品牌详情</div>
+					<ul class="bottomDetail">
+						<li>
+							<img src="common/img/ppxq_dzqq_img.png">
+							<div class="bdLeft">品牌行业:</div>
+							<div class="bdRight">门牌石</div>
+						</li>
+						<li>
+							<img src="common/img/ppxq_dzqq_img.png">
+							<div class="bdLeft">品牌网址:</div>
+							<div class="bdRight">http://www.wlmenpaishi.com</div>
+						</li>
+						<li>
+							<img src="common/img/ppxq_dzqq_img.png">
+							<div class="bdLeft">企业名称:</div>
+							<div class="bdRight">山东美华石业股份有限公司</div>
+						</li>
+						<li>
+							<img src="common/img/ppxq_dzqq_img.png">
+							<div class="bdLeft">企业地址:</div>
+							<div class="bdRight">山东省日照市五莲县石材产业园</div>
+						</li>
+					</ul>
+				</div>
+
+				<img src="common/img/ppsj_fhsy_btn_icon.png" class="back">
+				<img src="vote-img/ppxq_xcxm_icon.png" class="small-program">
+				<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+			</div>
+		</div>
+
+		<!-- 点击小程序出现的弹窗 -->
+		<div class="model-smallProgram" style="display: none;">
+			<div class="model-wrap">
+				<div class="model-box">
+					<div class="title">
+						<img src="vote-img/tpyz_zsxz_img.png">
+						<p>投票验证</p>
+						<img src="vote-img/tpyz_zsxy_img.png">
+					</div>
+					<div class="prompt-info">
+						<img src="vote-img/42c8f0594b57272e.jpg">
+					</div>
+					<div class="btn-wrap">扫描识别小程序二维码</div>
+				</div>
+				<div class="close">
+					<img src="vote-img/tpyz_gb_btn_icon.png">
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			$('.back').click(function() {
+				$(window).attr('location', 'vote.html')
+			})
+			$('.small-program').click(function() {
+				$('.model-smallProgram').css('display', 'block')
+				jzgd()
+			})
+			$('.close').click(function() {
+				$('.model-smallProgram').css('display', 'none')
+				yxhd()
+			})
+
+			function jzgd() {
+				document.body.style.overflow = "hidden";
+			}
+
+			function yxhd() {
+				// 只需一个显示即可，否则会
+				document.body.style.overflow = "auto";
+			}
+		</script>
+	</body>
+</html>

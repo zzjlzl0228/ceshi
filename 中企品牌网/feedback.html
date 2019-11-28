@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>意见反馈</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/feedback.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="topRule">留言时要把咨询或投诉举报的事情描述清楚，投诉举报某品牌刷票必须有证据，留言内容可以上传图片。</div>
+			<form class="content" method="post">
+				<div class="oneNeedInput needFileGroup">
+					<div class="title">
+						<div class="redLine"></div>
+						留言信息
+					</div>
+					<div class="label">
+						<span>留言内容</span>
+					</div>
+					<textarea class="needTextarea border1px" name="content" placeholder="为了您的反馈得到及时处理，请详细描述所遇到的问题谢谢！"></textarea>
+					<div class="needFile border1pxDashed">
+						<div class="mark" style="display: none;">
+							<img src="common/img/load.gif">
+						</div>
+						<div class="uploadFile" style="display: none;">
+							<img src="common/img/551@2x.png">
+							<button type="button" class="button uploadFailButton0">重新上传</button>
+						</div>
+						<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+						<label>
+							<img class="showImg">
+							<div class="slotClass">
+								<img src="common/img/535.png">
+								使图文清晰可见
+							</div>
+							<!-- 点击上传的文件 -->
+							<input class="fileClass" type="file" id="img0" name="upload">
+							<!-- 要传入后台的图片地址 -->
+							<input type="hidden" name="img0">
+						</label>
+					</div>
+					<div class="needFile border1pxDashed">
+						<div class="mark" style="display: none;">
+							<img src="common/img/load.gif">
+						</div>
+						<div class="uploadFile" style="display: none;">
+							<img src="common/img/551@2x.png">
+							<button type="button" class="button uploadFailButton1">重新上传</button>
+						</div>
+						<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+						<label>
+							<img class="showImg">
+							<div class="slotClass">
+								<img src="common/img/535.png">
+								使图文清晰可见
+							</div>
+							<input class="fileClass" type="file" id="img1" name="upload">
+							<input type="hidden" name="img1">
+						</label>
+					</div>
+					<div class="needFile border1pxDashed">
+						<div class="mark" style="display: none;">
+							<img src="common/img/load.gif">
+						</div>
+						<div class="uploadFile" style="display: none;">
+							<img src="common/img/551@2x.png">
+							<button type="button" class="button uploadFailButton2">重新上传</button>
+						</div>
+						<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+						<label>
+							<img class="showImg">
+							<div class="slotClass">
+								<img src="common/img/535.png">
+								使图文清晰可见
+							</div>
+							<input class="fileClass" type="file" id="img2" name="upload">
+							<input type="hidden" name="img2">
+						</label>
+					</div>
+					<div class="bottomRemarks">
+						(上传可以为JPG、PNG、GIF格式, 大小控制在5M以内)
+					</div>
+				</div>
+				<div class="fengexian"></div>
+				<ul class="secondNeedInput">
+					<li>
+						<div class="label">
+							<p>联系人</p>
+						</div>
+						<input type="text" value="" id="truename" name="truename" placeholder="请输入您的姓名">
+					</li>
+					<li>
+						<div class="label">
+							<p>联系电话</p>
+						</div>
+						<input type="text" value="" id="mobile" name="telephone" placeholder="请输入联系电话">
+					</li>
+					<li style="flex-wrap: wrap;">
+						<div class="label">
+							<p>验证码</p>
+						</div>
+						<input type="text" value="" id='captcha' name="captcha" onfocus="showcaptcha()" placeholder="请输入验证码">
+						<div class="code">
+							<img src="http://m.10pinpaiwang.com/captcha/captcha.png.php?rnd=m8205199878420955" alt="" id="captchapng"
+							 onclick="return false">
+						</div>
+						<div class="rowError">
+							<div class="error" id="ccaptcha"></div>
+							<div style="flex: 1"></div>
+							<div class="getCode" onclick="reloadcaptcha();">看不清，换一张</div>
+						</div>
+						<input name="rnd" type="hidden" id="rnd" value="">
+
+					</li>
+					<script type="text/javascript">
+						function getRand() {
+							// substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。(截取前两位)
+							return 'm' + Math.random().toString().substr(2)
+						}
+						getRand()
+						// 图片验证码显示出来的稍后刷新,是后台返回的图片
+						// 显示图片验证码
+						function showcaptcha() {
+							// 验证码未正确显示
+							ischeckcaptcha = false;
+							// 首先判断如果验证码图片隐藏,则将验证码图片得display属性设为空
+							if ($('#captchapng').css('display') == 'none') {
+								$('#captchapng').css('display', '')
+							}
+							// 判断验证码图片得src属性值是否是加载图片,若没有正在加载的动画,则将获取到得随机值赋值给验证码图片得src
+							if ($('#captchapng').attr('src') !== 'loading.gif') {
+								rnd = getRand();
+								$('#rnd').attr('value', rnd);
+								$('#captchapng').attr('src', 'http://m.10pinpaiwang.com/captcha/captcha.png.php?rnd=' + rnd);
+							}
+							if ($('#captcha').val() == '点击显示') {
+								$('#captcha').val() = '';
+							}
+						}
+						// 重新加载验证码图片
+						// 重新加载思路：将图片重新赋值,并将error信息的内容清空,将填写验证码的input输入框的val值也设置为空
+						function reloadcaptcha() {
+							ischeckcaptcha = false;
+							rnd = getRand();
+							$('#rnd').attr('value', rnd);
+							$('#captchapng').attr('src', 'http://m.10pinpaiwang.com/captcha/captcha.png.php?rnd=' + rnd);
+							$('#ccaptcha').html('')
+							$('#captcha').val('')
+						}
+
+						// 即时监听input的val值发生变化
+						$('#captcha').bind('input propertychange', function() {
+							var s = $(this).val();
+							if (s == '') {
+								var a = $('#ccaptcha').html('')
+							} else if (s.length == 4) {
+								$.ajax({
+									url: 'http://m.10pinpaiwang.com/captcha/captcha.check.php',
+									type: 'post',
+									dataType: 'json',
+									data: {
+										captcha: s,
+										rnd: rnd
+									},
+									async: false,
+									cache: false,
+									success: function(data) {
+										// 若状态为1,则需将error的内容修改为正确的图片及输入验证码正确的提示框
+										if (data.status == 1) {
+											$('#ccaptcha').html(
+												'<img src="http://mimg.10pinpaiwang.com/skin/v1/guestbook/images/duigou.png" align="absmiddle"/><span style="color:black;">输入验证码正确</span>'
+											)
+										} else {
+											$('#ccaptcha').html(
+												'<img src="http://mimg.10pinpaiwang.com/skin/v1/guestbook/images/cuowu.png" align="absmiddle"/><span>输入验证码错误！</span>'
+											)
+										}
+									},
+									error: function(e) {
+										$('#ccaptcha').html('<img src="http://mimg.10pinpaiwang.com/skin/v1/guestbook/images/cuowu.png" align="absmiddle"/><span>输入验证码错误！</span>');
+									}
+								})
+							}
+						})
+						var rnd = '';
+						var ischeckcaptcha = false;
+					</script>
+				</ul>
+				<div class="submit">
+					<button type="button" class="clearSubmit">重写</button>
+					<button type="button" name="submit" class="buttonSubmit">提交反馈</button>
+				</div>
+				<div class="fengexian"></div>
+			</form>
+			<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+
+			<!-- 返回按钮 -->
+			<img src="common/img/ppsj_fhsy_btn_icon.png" class="back">
+		</div>
+		<div class="toast" style="display: none;"></div>
+		<!-- 提交失败的提示框 -->
+		<div class="dialog failDialog" style="display: none;">
+			<div class="mark">
+				<div class="container">
+					<img src="img/bmcg_tjsb_icon@2x.png" >
+					<p>问题反馈提交失败，请重试</p>
+					<button type="button" class="button failBtn">我知道了</button>
+				</div>
+			</div>
+		</div>
+		<!-- 提交成功的提示框  -->
+		<div class="dialog successDialog" style="display: none;">
+			<div class="mark">
+				<div class="container">
+					<img src="img/bmcg_tjcg_icon@2x.png" >
+					<p>您已成功提交问题反馈</p>
+					<button type="button" class="button successBtn">我知道了</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('.back').click(function() {
+				$(window).attr('location', 'index.html')
+			})
+		</script>
+		<script type="text/javascript">
+			
+			var activitiesInit = {
+				submit: function() {
+					var needFiles = $('.needFile');
+					var showImages = $('.showImg');
+					var uploadFiles = $('.uploadFile');
+					var deleteCurrentImage = $('.deleteCurrentImage');
+					// 定时器
+					var toastTimer;
+					var files = [];
+					// 清除表单数据
+					function clearForm() {
+						files = [];
+						for(var i = 0; i < 3; i++) {
+							(function(i){
+								// 清空的内容是(移出显示图片的src属性，并将其隐藏,关闭按钮隐藏，显示类名为slotClass,隐藏重新上传的div,将name为img0-3De input框的value值设置为空,清空错误提示)
+								$(showImages[i]).removeAttr('src');
+								$(showImages[i]).css('display','none');
+								$(deleteCurrentImage[i]).css('display','none');
+								$($(needFiles[i]).children()[0]).css('display','none');
+								$($($(needFiles[i]).children()[3]).children()[1]).css('display','flex');
+								$(uploadFiles[i]).css('display','none');
+								$('input[name=img' + i + ']').attr('value','');
+								$('#ccaptcha').html('');
+							})(i)
+						}
+						// 将oneNeedInput重置
+						$('.content')[0].reset();
+						//刷新验证码
+						reloadcaptcha();
+					}
+					// 图片文件上传
+					for(var i = 0; i< 3; i++) {
+						(function(i) {
+							$('#img' + i).change(function(){
+								var file = this.files[0];
+								if(window.FileReader) {
+									var reader = new FileReader();
+									reader.readAsDataURL(file);
+									reader.onloadend = function(e) {
+										var formData = new FormData();
+										formData.append('upthumb',file);
+										$($(needFiles[i]).children()[0]).css('display','flex');
+										$(showImages[i]).css('display','block');
+										$(showImages[i]).removeAttr('src','');
+										$.ajax({
+											url: 'http://m.10pinpaiwang.com/guestbook/upload.php',
+											type: 'post',
+											dataType: 'json',
+											data: formData,
+											processData: false,
+											contentType: false,
+											success: function(data) {
+												// 上传成功显示图片
+												$('#img'+ i)[0].value = '';
+												if(data.type) {
+													$(showImages[i]).attr('src',e.target.result);
+													// 正在加载的loading图标隐藏
+													$($(needFiles[i]).children()[0]).css('display','none');
+													$($($(needFiles[i]).children()[3]).children()[1]).css('display','none');
+													// 上传失败图标y隐藏
+													$($(needFiles[i]).children()[1]).css('display','none');
+													// 删除图标显示
+													$($(needFiles[i]).children()[2]).css('display','flex');
+													$('input[name=img'+i+']').attr('src',data.img);
+												} else {
+													// 显示重新上传
+													$($(needFiles[i]).children()[0]).css('display','none');
+													$($(needFiles[i]).children()[1]).css('display','flex');
+													$(showImages[i]).css('display','none');
+													// 删除图标
+													$($($(needFiles[i]).children()[3]).children()[1]).css('display','none');
+													$($(needFiles[i]).children()[2]).css('display','none');
+													// 错误信息提示
+													$('.toast').css('display','flex');
+													$('.toast').html(data.img);
+													clearTimeout(toastTimer);
+													toastTimer = setTimeout(function() {
+														$('.toast').css('display','none');
+													}, 2000);
+													$('input[name=img' + i + ']').attr('value','');
+												}
+											},
+											error: function (XMLHttpRequest, textStatus, errorThrown) {
+												$('#img'+ i).value = '';
+												$($(needFiles[i]).children()[0]).css('display','none');
+												$($(needFiles[i]).children()[1]).css('display','flex');
+												$(showImages[i]).css('display','none');
+												$($($(needFiles[i]).children()[3]).children()[1]).css('display','none');
+												$($(needFiles[i]).children()[2]).css('display','none');
+												$('.toast').css('display','flex');
+												$('.toast').html('上传失败');
+												clearTimeout(toastTimer);
+												toastTimer = setTimeout(function() {
+													$('.toast').css('display','none');
+												}, 2000);
+											}
+										})
+									}
+								}
+							})
+							// 重新上传的按钮的点击事件
+							$('.uploadFailButton'+i).click(function(){
+								$('#img'+ i).click();
+							})
+							// 上传图片成功的删除图片的点击事件
+							$('.deleteCurrentImage'+i).click(function(){
+								// 显示图片隐藏,并移除图片的src属性
+								$(showImages[i]).css('display','none');
+								$(showImages[i]).removeAttr('src');
+								$(uploadFiles[i]).css('display','none');
+								$('.deleteCurrentImage'+i).css('display','none');
+								$($($(needFiles[i]).children()[3]).children()[1]).css('display','flex');
+								// 删除要传入后台的图片地址
+								$('input[name=img' + i + ']').attr('value','');
+							})
+						})(i)
+					}
+					
+					// 手机号验证正则
+					function checkmobile () {
+						var mobile = $('#mobile').val();
+						var myReg = /^[0-9]{0,11}$/;
+						if (myReg.test(mobile)){
+							return false;
+						} else {
+							return false;
+						}
+					}
+					// 点击提交反馈按钮
+					$('.buttonSubmit').click(function(){
+						if (!checkmobile()) {
+							$('#mobileerr').css('display','none');
+							return false;
+						}
+						var d = {};
+						// serializeArray() 方法通过序列化表单值来创建对象数组（名称和值）
+						var t = $('form').serializeArray();
+						// 处理表单数据
+						$.each(t,function(){
+							d[this.name] = this.value;
+							$.ajax({
+								url: 'http://m.10pinpaiwang.com/guestbook/index.php?action=add',
+								type: 'post',
+								data: t,
+								dataType: 'json',
+								async: false,
+								cache: fals,
+								success: function (data) {
+									if(data.code = 101) {
+										// 信息不完整
+										// 显示信息错误的提示框,2s后错误提示框隐藏
+										$('.toast').css('display','flex');
+										$('.toast').text(data.result);
+										toastTimer = setTimeout(function() {
+											$('.toast').css('display','none')
+										}, 2000);
+										clearTimeout(toastTimer);
+										// 刷新验证码
+										reloadcaptcha();
+									} else if(data.code == 200) {
+										// 提交成功
+										$('#mobileerr').css('display','none');
+										$('.successDialog').fadeIn(133)
+										clearForm()
+									} else if (data.code == 100) {
+										// 提交失败
+										$('.failDialog').fadeIn(133);
+									} else if (data.code == 102) {
+										// 验证码错误
+										$('.toast').css('display','flex');
+										$('.toast').text(data.result);
+										toastTimer = setTimeout(function() {
+											$('.toast').css('display','none')
+										}, 2000);
+										clearTimeout(toastTimer);
+										// 刷新验证码
+										reloadcaptcha();
+									}
+								},
+								error: function (e) {}
+							})
+						})		
+					})
+					$('.clearSubmit').click(clearForm);
+				},
+				// 错误提示框：点击我知道了按钮,淡出隐藏
+				dialog: function () {
+					$('.failBtn').click(function(){
+						$('.failDialog').fadeOut(133);
+					})
+					$('.successBtn').click(function(){
+						$('.successDialog').fadeOut(133);
+					})
+				}
+			}
+			$(document).ready(function(){
+				for(var k in activitiesInit) {
+					activitiesInit[k]()
+				}
+				reloadcaptcha();
+	
+			})
+			$('.buttonSubmit').click(function(){
+				// 获取留言信息
+				var message = $('.needTextarea').val();
+				// 获取联系人
+				var name = $('#truename').val();
+				// 获取手机号码
+				var mobile = $('#mobile').val();
+				// 获取图片验证码
+				var code = $('#captcha').val()
+				console.log(message)
+				console.log(name)
+				console.log(mobile)
+				console.log(code)
+			})
+			
+			
+		</script>
+	</body>
+</html>

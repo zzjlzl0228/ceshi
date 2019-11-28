@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>百科</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/baike.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container wrap">
+			<div class="topTab">
+				<div class="nav active">行业百科</div>
+				<div class="nav">选购百科</div>
+			</div>
+			<div class="redLine">
+				<div class="line"></div>
+				<div class="line hide"></div>
+			</div>
+			<div class="grayline"></div>
+			<div>
+				<div class="con">
+					&nbsp;门牌石是经过加工成型后用作门牌或屏风的特大型专用石材，属于园林石材，也是奇石的一种。门牌石主要用于企事业单位、机关、院校、军队、城市、景点等用于门牌石、雕刻石、刻字石等标志性的形象艺术设计制作。采用花岗岩门牌石制作的单位门牌石具有气派、大方、高雅、时尚的特色，文化底蕴深厚，令人赏心悦目。
+				</div>
+				<div class="con">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门牌石主要由石英、长石和长石构成，颜色通常较暗，有的还含有极少量的方解石。表面能看出具有矿物颗粒的结晶体。根据石英、云母和长石的占有比例，花岗石也可细分为多种类型。
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;花岗石因常常含有其它矿物质，如角闪石和云母，而呈现各种颜色，包括：褐色、绿色、红色和常见的玄色等。由于它结晶过程很慢，它的晶体象魔方一样一个个地交织在一起，所以它很坚硬。它同屋子一样耐久，不掉碎屑，不易刮伤，不怕高温。不论颜色或亮光，只要有一些养护的常识，都不会褪色或变暗。他几乎不受污染，抛光后表面光泽度很高，各种天色带来的杂质几乎都不能粘附。
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;门牌石色泽好坏是由石料决定的,门牌石质量标准,门牌石正面应该色泽润亮,可以清晰地反映了风采光泽值应该不少于30光单元,或由供需间的模式执行。但天然门牌石光泽最小是个基本值,在大多数情况门牌石光值须达到80~90年光元,才会有好的亮光效。
+				</div>
+			</div>
+			<img src="common/img/ppsj_fhsy_btn_icon.png" class="back">
+		</div>
+		<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 点击返回按钮
+			$('.back').click(function() {
+				$(window).attr('location', 'vote.html')
+			})
+
+			// tab切换
+			$('.nav').click(function() {
+				$(this).parent().children().removeClass('active');
+				$(this).addClass('active');
+				// 当前元素得下标
+				var i = $(this).index()
+				$('.line').addClass('hide');
+				$('.line').eq(i).removeClass('hide');
+				// 显示相对应得内容
+				$('.con').css('display','none')
+				$('.con').eq(i).css('display','block');
+			})
+		</script>
+	</body>
+</html>

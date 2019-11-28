@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>参加活动</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/joinActivity.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="content" style="background-color: #F5F4F5;">
+				<div class="logoImg">
+					<p class="bannerBtn">门牌石行业</p>
+				</div>
+				<div class="formContainer">
+					<!-- 官方网站 -->
+					<ul class="ofWeb">
+						<li>
+							<div class="label">
+								<span>官方网站</span>
+							</div>
+							<input type="text" name="homePage" id="homePage" placeholder="请输入官方网站" />
+						</li>
+					</ul>
+					<!-- 上传证件 -->
+					<div class="upDoc">
+						<div class="title">上传证件
+							<div class="remarks">（上传图片大小请控制在5M以内）</div>
+						</div>
+						<ul class="needFileGroup">
+							<li class="needFile">
+								<div class="mark" style="display: none;">
+									<img src="common/img/loading.gif">
+								</div>
+								<div class="uploadFile" style="display: none;">
+									<img src="common/img/551@2x.png">
+									<button type="button" class="uploadFailButton0">重新上传</button>
+								</div>
+								<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+								<label>
+									<img class="showImage" id="logourl1">
+									<div class="slotClass">
+										<img src="common/img/535.png">
+										<div class="label">
+											<span>品牌logo</span>
+										</div>
+									</div>
+									<input class="fileClass" type="file" id="file">
+								</label>
+							</li>
+							<li class="needFile">
+								<div class="mark" style="display: none;">
+									<img src="common/img/loading.gif">
+								</div>
+								<div class="uploadFile" style="display: none;">
+									<img src="common/img/551@2x.png">
+									<button type="button" class="uploadFailButton1">重新上传</button>
+								</div>
+								<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+								<label>
+									<img class="showImage" id="logourl1">
+									<div class="slotClass">
+										<img src="common/img/535.png">
+										<div class="label">
+											<span>营业执照</span>
+										</div>
+									</div>
+									<input class="fileClass" type="file" id="file">
+								</label>
+							</li>
+							<li class="needFile">
+								<div class="mark" style="display: none;">
+									<img src="common/img/loading.gif">
+								</div>
+								<div class="uploadFile" style="display: none;">
+									<img src="common/img/551@2x.png">
+									<button type="button" class="uploadFailButton2">重新上传</button>
+								</div>
+								<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+								<label>
+									<img class="showImage" id="logourl1">
+									<div class="slotClass">
+										<img src="common/img/535.png">
+										<div class="label">
+											<span>商标注册证</span>
+										</div>
+									</div>
+									<input class="fileClass" type="file" id="file">
+								</label>
+							</li>
+							<li class="needFile">
+								<div class="mark" style="display: none;">
+									<img src="common/img/loading.gif">
+								</div>
+								<div class="uploadFile" style="display: none;">
+									<img src="common/img/551@2x.png">
+									<button type="button" class="uploadFailButton3">重新上传</button>
+								</div>
+								<img src="common/img/del.png" class="deleteCurrentImage" style="display: none;">
+								<label>
+									<img class="showImage" id="logourl1">
+									<div class="slotClass">
+										<img src="common/img/535.png">
+										<div class="label">
+											<span>添加证件</span>
+										</div>
+									</div>
+									<input class="fileClass" type="file" id="file">
+								</label>
+							</li>
+						</ul>
+						<div style="font-size: 0.24rem;font-weight: 400;color: rgba(191,191,191,1);">免责声明: 平台可能会根据图片尺寸要求对您上传的图片进行修改</div>
+					</div>
+
+					<!-- 身份验证 -->
+					<ul class="idVer ofWeb">
+						<div class="title">身份验证</div>
+						<li style="border-top: 0.01rem solid rgba(241,241,241,1);">
+							<div class="label">
+								<span>手机号</span>
+							</div>
+							<input type="text" name="phone" id="phone" placeholder="请输入手机号" onblur="checkPhone()" />
+							<div class="error" id="mobileerr" style="display: none;">
+								<img src="common/img/551@2x.png">
+								手机号码不正确
+							</div>
+						</li>
+						<li>
+							<div class="label">
+								<span>验证码</span>
+							</div>
+							<input type="text" name="captcha" id="captcha" placeholder="请输入图片验证码" onblur="checkCode()" />
+							<div class="code">
+								<img src="http://m.10pinpaiwang.com/captcha/captcha.png.php?rnd=m37885347749773546" alt="" id="captchapng"
+								 onclick="return false">
+							</div>
+							<div style="display: flex;justify-content: space-between;width: 100%;">
+								<div class="error" style="justify-content: flex-start;display: none;" id="codeerr">
+									<img src="common/img/551@2x.png" style="margin-right: 0.1rem;">
+									<span style="font-size: 0.24rem;">图片验证码输入错误</span>
+								</div>
+								<div style="flex: 1;"></div>
+								<span style="font-size: 0.24rem;">看不清，换一张</span>
+							</div>
+						</li>
+						<li>
+							<div class="label">
+								<span>短信验证码</span>
+							</div>
+							<input type="text" name="smscode" id="psmscode" placeholder="请输入短信验证码" onblur="checkDxCode()()" />
+							<div class="getCode" onclick="sendCode()">发送短信</div>
+							<div class="error" id="mobileerr" style="display: none;">
+								<img src="common/img/551@2x.png">
+								短信验证码输入错误
+							</div>
+						</li>
+					</ul>
+					<div class="submit">
+						<a href="#">
+							<div class="kefu">
+								<img src="common/img/chat.png" style="width: 0.4rem;height: 0.33rem;margin-right: 0.2rem;">
+								客服
+							</div>
+						</a>
+						<button type="submit" name="submit" value="提交报名" class="buttonSubmit" id="buttonSubmit">提交</button>
+					</div>
+				</div>
+			</div>
+			<img src="common/img/ppsj_fhsy_btn_icon.png" class="back">
+		</div>
+
+		<!-- 客服弹窗 -->
+		<div class="cusPo" style="display: none;">
+			<div class="cusPoContainer">
+				<div class="model-box">
+					<img src="common/img/kefu.png" class="pic">
+					<p style="margin-bottom: 0.4rem;">联系客服</p>
+					<p class="info">点击下方联系客服</p>
+					<p class="info">进行品牌报名问题咨询</p>
+					<div class="contact">
+						<img src="common/img/wx.png">
+						<img src="common/img/tel.png">
+					</div>
+
+				</div>
+				<div class="close">
+					<img src="vote-img/tpyz_gb_btn_icon.png">
+				</div>
+			</div>
+		</div>
+
+		<!-- 返回投票页按钮 -->
+		<a href="vote.html" class="bcVo">
+			<img src="img/home_fhtp_btn_icon.png">
+		</a>
+
+		<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.back').click(function() {
+				$(window).attr('location', 'vote.html')
+			})
+			$('.kefu').click(function() {
+				$('.cusPo').css('display', 'flex');
+				jzgd()
+			})
+			$('.close').click(function() {
+				$('.cusPo').css('display', 'none');
+				yxhd()
+			})
+
+			function jzgd() {
+				document.body.style.overflow = "hidden";
+			}
+
+			function yxhd() {
+				document.body.style.overflow = "auto";
+			}
+		</script>
+		<script type="text/javascript">
+			// 图片上传
+			$('.fileClass').on('change', function() {
+				//当chooseImage的值改变时，执行此函数
+
+				var filePath = $(this).val(),
+					//获取到input的value，里面是文件的路径
+					fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+					src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+
+				// 检查是否是图片
+				if (!fileFormat.match(/.png|.jpg|.jpeg/)) {
+					error_prompt_alert('上传错误,文件格式必须为：png/jpg/jpeg');
+					return;
+				} else {
+					$(this).parent().find($('.showImage')).css('display', 'block');
+					$(this).parent().find($('.showImage')).attr('src', src);
+					$(this).parent().parent().find($('.deleteCurrentImage')).css('display', 'flex')
+					$(this).parent().find($('.slotClass')).css('display', 'none')
+				}
+			});
+
+			$('.deleteCurrentImage').click(function() {
+				$(this).parent().find('label').find('.fileClass').val('');
+				// 不可将其移出,因为移出后再次上传图片时将没有显示图片的位置
+				// $(this).parent().find('label').find('.showImage').remove();
+				$(this).parent().find('label').find('.showImage').attr('src', '');
+				$(this).parent().find('label').find('.showImage').css('display', 'none');
+				$(this).parent().find('label').find('.slotClass').css('display', 'flex')
+				$(this).css('display', 'none')
+			})
+		</script>
+		<script type="text/javascript">
+			// 验证手机号
+			function checkPhone() {
+				var mobile = $('#phone').val();
+				var reg = /^1[3456789]\d{9}$/;
+				if (mobile == '') {
+					$('#mobileerr').text('手机号码不能为空')
+				} else if (!reg.test(mobile)) {
+					$('#mobileerr').css('display', 'flex')
+				}
+			}
+			// 验证图片验证码
+			function checkCode() {
+				var pic = $('#captcha').val();
+				var myReg = /^[A-Za-z]{4}$/;
+				if (pic == '') {
+					$('#codeerr span').text('图片验证码不能为空')
+				} else if (!myReg.test(pic)) {
+					$('#codeerr').css('display', 'flex')
+				}
+			}
+			// 验证短信验证码
+			function checkDxCode() {
+				var dxcode = $('#smscode').val();
+				var smscode = /^\d{6}$/;
+				if (dxcode == '') {
+					$('#smscodeerr').text('短信验证码不能为空')
+				} else if (!smscode.test(dxcode)) {
+					$('#smscodeerr').css('display', 'flex')
+				}
+			}
+
+			var countdown = 60;
+
+			function sendCode() {
+				var obj = $(".getCode");
+				settime(obj);
+			}
+
+			function settime(obj) { //发送验证码倒计时
+				if (countdown == 0) {
+					obj.text('重新发送')
+					countdown = 60;
+					return;
+				} else {
+					obj.text("重新发送" + countdown);
+					countdown--;
+				}
+				setTimeout(function() {
+					settime(obj)
+				}, 1000)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+		<title>热门榜单</title>
+		<link rel="stylesheet" type="text/css" href="common/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/hotList.css" />
+		<link rel="stylesheet" type="text/css" href="common/css/swiper.min.css" />
+		<script src="common/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="common/js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="top">
+					<img src="img/rmbd.png">
+				</div>
+				<div class="list">
+					<a href="#" class="showContent">
+						<div class="item">
+							<div class="brand"></div>
+							<div class="topTen">2019年十大品牌</div>
+							<div class="date"></div>
+						</div>
+					</a>
+				</div>
+				<div class="pageContainer">
+					<div class="pageContent">
+						<div class="prev button border1px">
+							<a href="#">上一页</a>
+						</div>
+						<div class="next button">
+							<a href="#">下一页</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 广告轮播图 -->
+			<div class="container" style="height: 2.2rem; margin-top: 0.4rem;">
+				<div class="swiper-bottom">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="img/09-57-11-f2yol5-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-39-hbf86x-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-55-e397m9-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-57-11-f2yol5-2200004.png">
+							</div>
+							<div class="swiper-slide">
+								<img src="img/09-56-39-hbf86x-2200004.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="common/js/footer.js" type="text/javascript" charset="utf-8"></script>
+			<img src="common/img/ppsj_fhsy_btn_icon.png" class="back">
+		</div>
+		<!-- 置顶按钮 -->
+		<div class="contant">
+			<img src="img/tpy_fx_icon.png">
+		</div>
+		<script src="common/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				fenye('hotList.json', '.list',$('.list a:first'))
+			})
+		</script>
+	</body>
+</html>

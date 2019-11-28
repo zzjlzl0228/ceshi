@@ -1,0 +1,13 @@
+document.writeln("<div class=\'bottom-info\'>");
+document.writeln("					<img src=\'common/img/logo.png\' >");
+document.writeln("					<div class=\'service-tel\'>客服电话：400-159-0958</div>");
+document.writeln("					<div class=\'bottom-line\'>");
+document.writeln("						<a href=\'feedback.html\'>意见反馈</a>");
+document.writeln("						<div></div>");
+document.writeln("						<a href=\'index.html\'>中企品牌网</a>");
+document.writeln("						<div></div>");
+document.writeln("						<a href=\'https://v.yunaq.com/certificate?domain=m.10pinpaiwang.com&amp;from=label&amp;code=90020\'>");
+document.writeln("							<img src=\'common/img/label_lg_152.png\' >");
+document.writeln("						</a>");
+document.writeln("					</div>");
+document.writeln("				</div>");
