@@ -1,0 +1,289 @@
+.tips {
+	width: 6rem;
+	height: 7.4rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.tipsBox {
+	background: url(../img/touptc_toupts_success_bg.png) no-repeat center;
+	background-size: 100% 100%;
+	z-index: 400;
+}
+
+.tipsContent {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.tipsClose {
+	width: 0.44rem;
+	height: 0.44rem;
+	background: url(../img/touptc_guanb_icon.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 2.7rem;
+	right: 0.3rem;
+}
+
+.tipsText {
+	width: 100%;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.36rem;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	position: absolute;
+	top: 4.33rem;
+}
+
+.tipsTime {
+	width: 0.56rem;
+	height: 0.56rem;
+	background: #fff;
+	color: #0261b1;
+	border-radius: 0.06rem;
+	text-align: center;
+	line-height: 0.56rem;
+}
+
+.voteLj {
+	width: 5.62rem;
+	height: 0.81rem;
+	background: #bbcee2;
+	border-radius: 0.1rem;
+	position: absolute;
+	top: 5.5rem;
+	left: 0.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 0.28rem;
+}
+
+.ljTitle {
+	padding-left: 0.2rem;
+}
+
+.ljWebsite {
+	width: 2.7rem;
+}
+
+.copyBtn {
+	width: 0.9rem;
+	height: 0.48rem;
+	background-color: #0261B1;
+	text-align: center;
+	line-height: 0.48rem;
+	font-size: 0.2rem;
+	color: #fff;
+	letter-spacing: 0.05rem;
+	border-radius: 0.06rem;
+	margin-right: 0.2rem;
+}
+
+/* 夜间投票提示 */
+.tipsNight {
+	background: url(../img/touptc_toupts_bg.png) no-repeat center;
+	background-size: 100% 100%;
+	z-index: 300;
+}
+
+.tipsNightClose {
+	background: url(../img/touptc_guanb_icon_white.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.night-tip-text {
+	width: 5.04rem;
+	font-size: 0.36rem;
+	color: #fff;
+	line-height: 0.66rem;
+	top: 4.07rem;
+
+}
+
+.night-tip-btn {
+	width: 5.38rem;
+	height: 1.06rem;
+	background: url(../img/touptc_ann_btn.png) no-repeat center;
+	background-size: 100%;
+	top: 5.66rem;
+	font-size: 0.3rem;
+	color: #fff;
+	text-align: center;
+	line-height: 1.06rem;
+}
+
+/* 投票规则 */
+.tipsRule {
+	height: 8.64rem;
+	background: url(../img/touptc_guiz_bg.png) no-repeat;
+	background-size: 100%;
+	z-index: 200;
+}
+
+.rule_bottom {
+	width: 5.08rem;
+	/* height: 3.98rem; */
+	position: absolute;
+	top: 3.58rem;
+}
+
+.rule_bottom h3 {
+	font-size: 0.3rem;
+	color: #1d5f97;
+	margin-bottom: 0.1rem;
+}
+
+.rule_bottom p {
+	font-size: 0.3rem;
+	color: #000;
+	margin-bottom: 0.15rem;
+	margin-left: 0.24rem;
+}
+
+/* 投票验证 */
+.checking {
+	height: 7.86rem;
+	background: url(../img/touptc_yanz_bg.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 100;
+}
+
+.checking-top {
+	width: 100%;
+	margin-bottom: 0.37rem;
+	text-align: center;
+	padding-top: 2.14rem;
+}
+
+.checking-top img {
+	width: 3.06rem;
+	height: 1.62rem;
+	border-radius: 0.1rem;
+	margin-bottom: 0.1rem;
+}
+
+.checking-top h3 {
+	font-size: 0.36rem;
+}
+
+.checking-center {
+	height: 0.8rem;
+	margin-bottom: 0.48rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.3rem;
+}
+
+.checking-input {
+	width: 3.6rem;
+	height: 0.84rem;
+	border: 1px solid #acbcd3;
+	background-color: #fff;
+	border-radius: 0.04rem;
+	line-height: 0.84rem;
+
+}
+
+#imgCode {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0.3rem;
+	color: #333;
+	padding-left: 0.3rem;
+	border-radius: 0.04rem;
+}
+
+.checking-code {
+	width: 1.7rem;
+	height: 0.8rem;
+	border-radius: 0.04rem;
+}
+
+.checking-code img {
+	width: 1.7rem;
+	height: 0.8rem;
+	display: block;
+	border-radius: 0.04rem;
+}
+
+.toupiao {
+	margin-left: 0.3rem;
+}
+
+.vote_guize {
+	width: 100%;
+	text-align: center;
+	font-size: 0.26rem;
+	color: #2e6daf;
+}
+
+/* 投票成功提示框 */
+.voteSuccess {
+	height: 8.4rem;
+	background: url(../img/touptc_toupcg_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.tip-success-top {
+	width: 100%;
+	text-align: center;
+	padding-top: 3.52rem;
+}
+.tip-success-top img {
+	width: 2.41rem;
+	height: 1.3rem;
+	border-radius: 0.1rem;
+}
+.tip-success-text {
+	width: 2.43rem;
+	height: 0.54rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.2rem;
+}
+.tip-success-text img {
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	margin-right: 0.14rem;
+}
+.tip-success-text h3 {
+	font-size: 0.36rem;
+}
+.tip-success-top p {
+	font-size: 0.2rem;
+}
+.tip-success-center {
+	top: 6.3rem;
+}
+.tip-success-bottom {
+	font-size: 0.3rem;
+	text-align: center;
+	color: #67727b;
+	margin-top: 1.75rem;
+}
+/* 投票失败提示框 */
+.voteFailure {
+	height: 6.15rem;
+	background: url(../img/touptc_toupsb_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.voteFaiClose {
+	top: 0.4rem;
+}
+.voteSb {
+	padding-top: 1.3rem;
+}
+.tip-shibai {
+	top: 4.1rem;
+	background-color: #e3e6eb;
+}

@@ -1,0 +1,69 @@
+/* 公共部分设置 */
+
+body,div,ul,ol,li,p{ margin:0; padding:0; }
+a {  text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+
+* {
+  margin: 0;
+  padding: 0;
+	box-sizing: border-box;
+}
+
+.content {
+  min-height: calc(100% - 0.9rem);
+}
+input {
+	border: none;
+	outline: no;
+}
+body {
+  background-color: #f3f3f3;
+}
+
+a,
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 7.5rem;
+  margin: 0 auto;
+}
+
+.scrolledDown {
+  background-color: #497fbb;
+}
+/* 单行溢出隐藏 */
+.needEllipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+/* 多行溢出隐藏显示... */
+.ellipsis {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+/* 左右绝对居中 */
+.ab {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* 蒙版 */
+.container {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+}
