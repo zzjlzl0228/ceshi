@@ -1,0 +1,315 @@
+/* 公共部分设置 */
+
+body,
+div,
+ul,
+ol,
+li,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #000000;
+	display: block;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: none;
+	width: 100%;
+	display: block;
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+button {
+	outline: none;
+	border: none;
+}
+
+body {
+	background-color: #fff;
+}
+
+a,
+a:hover,
+a:focus {
+	color: #000;
+	text-decoration: none;
+}
+
+html,
+body {
+	min-width: 320px;
+}
+
+
+/* 单行溢出隐藏 */
+.needEllipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/* 多行溢出隐藏显示... */
+.ellipsis {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+/* 左右绝对居中 */
+.ab {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.content {
+	width: 7.5rem;
+	margin: auto;
+	position: relative;
+}
+
+/* 导航栏 */
+.navContainer {
+	width: 6.9rem;
+	margin: auto;
+	height: 0.8rem;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.left-logo {
+	width: 2.07rem;
+	height: 0.45rem;
+	display: flex;
+	align-items: center;
+}
+
+.left-logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.center-nav {
+	max-width: 4rem;
+	height: 0.6rem;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.item {
+	width: 0.8rem;
+	margin-right: 0.2rem;
+	display: flex;
+	align-items: center;
+	font-size: 0.3rem;
+	letter-spacing: 0.02rem;
+	font-weight: 400;
+}
+
+/* .item:first-child {
+	margin-left: 5.37rem;
+} */
+
+.item a {
+	width: 0.8rem;
+	display: block;
+	color: #000000;
+}
+
+.item:last-child {
+	margin-right: 0;
+}
+
+.active a {
+	color: rgba(211, 20, 28, 1);
+}
+
+.item:hover a {
+	text-decoration: none;
+	color: rgba(211, 20, 28, 1);
+}
+
+.right-btn {
+	width: 0.44rem;
+	height: 0.44rem;
+
+}
+
+.nav {
+	width: 7.5rem;
+	margin: auto;
+	height: auto;
+	background: #fff;
+	border-bottom-left-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
+	position: relative;
+	z-index: 5;
+}
+
+.nav ul {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.nav ul li {
+	width: 1.11rem;
+	height: 0.5rem;
+	background: #F6F6F6;
+	margin-right: 0.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.3rem;
+	letter-spacing: 0.02rem;
+	font-weight: 400;
+	margin-bottom: 0.3rem;
+	border-radius: 0.1rem;
+}
+
+.active1 {
+	border: 0.01rem solid #ff4936;
+	background: #ffeceb !important;
+
+}
+
+.active1 a {
+	color: #ff4936;
+}
+
+/* footer */
+footer {
+	width: 100%;
+	height: auto;
+	background: #18191c;
+}
+
+.footer {
+	width: 7rem;
+	padding: 0.45rem 0 0.2rem;
+	margin: auto;
+	text-align: center;
+}
+
+.footer .top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.2rem;
+	font-weight: 400;
+	color: #464647;
+	margin-bottom: 0.2rem;
+}
+
+.footer .top .grayline {
+	width: 0.02rem;
+	height: 0.25rem;
+	background: #464647;
+	margin: 0 0.18rem;
+}
+
+/* banner */
+.bannerContainer {
+	width: 7rem;
+	margin: auto;
+	height: 3.75rem;
+}
+
+.bannerContainer .swiper-slide img {
+	position: relative;
+	/* border-radius: 0.1rem; */
+}
+
+.bannerContainer .swiper-slide p {
+	font-size: 0.25rem;
+	font-weight: bold;
+	letter-spacing: 0.03rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	bottom: 0.5rem;
+	left: 0;
+	right: 0;
+}
+
+.bannerContainer .swiper-pagination {
+	width: 4.22rem !important;
+	margin: auto;
+}
+
+.bannerContainer .swiper-pagination-bullet {
+	width: 0.91rem;
+	height: 0.08rem;
+	background: #999999;
+	opacity: 1;
+	border-radius: 0.3rem;
+}
+
+.bannerContainer .swiper-pagination-bullet-active {
+	background: #ff4733;
+}
+
+.back {
+	width: 0.6rem;
+	height: 0.6rem;
+	position: absolute;
+	top: 0rem;
+	left: 0.4rem;
+	z-index: 66;
+}
+.img1 {
+	width: 3rem;
+	height: 1.81rem;
+}
+.img2 {
+	width: 6.9rem;
+	height: 3.47rem;
+}
+.img3 {
+	width: 2.2rem;
+	height: 1.34rem;
+}
+@media (max-width: 320px) {
+	.footer {
+		width: 7.5rem;
+	}
+}

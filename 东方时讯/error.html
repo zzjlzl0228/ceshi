@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>404</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.content {
+			width: 7.5rem;
+			height: 100vh;
+			background: url(img/common/404-back.png) no-repeat;
+			background-size: 100%;
+		}
+		.text {
+			font-size: 0.26rem;
+			font-weight: 400;
+			color: #d1d1d1;
+			text-align: center;
+			padding-top: 60%;
+		}
+		.btn {
+			width: 7.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1.75rem;
+		}
+		.but {
+			width: 2.22rem;
+			height: 0.82rem;
+			background: #ffdcd8;
+			border-radius: 0.41rem;
+			font-size: 0.3rem;
+			font-weight: bold;
+			color: #ff786c;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+		}
+		.previous {
+			margin-right: 0.4rem;
+		}
+		.but:hover {
+			background: #ff4733;
+			color: #fff;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="text">
+					呀，网页出错啦！程序员正在检修中...
+				</div>
+				<div class="btn">
+					<div class="but previous">
+						返回上一页
+					</div>
+					<div class="but refresh">
+						刷新一下
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('.previous').click(function(){
+				history.go(-1)
+			})
+			$('.refresh').click(function(){
+				$(window).attr('location','finance.html')
+			})
+		</script>
+	</body>
+</html>
