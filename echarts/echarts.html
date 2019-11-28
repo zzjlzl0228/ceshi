@@ -289,11 +289,13 @@
 			}
 		</script>
 		<script type="text/javascript">
-			document.body.addEventListener('touchmove', function(e) {
-				e.preventDefault();
-			}, {
-				passive: false
-			});
+			function jzgd() {
+				document.body.style.overflow = "hidden";			document.querySelector("html").style.overflow = "hidden";
+			}
+			function yxhd() {
+				document.body.style.overflow = "auto";
+				document.querySelector("html").style.overflow = "auto";
+			}
 		</script>
 	</body>
 </html>
